@@ -1,0 +1,25 @@
+{% load static %}
+<html>
+<head>
+<title>{{title}}</title>
+    <link rel="stylesheet" type="text/css" href="{% static './css/login.css.css' %}">
+<body>
+       
+    <div class="loginbox">
+    <img src="{% static './img/avatar.png' %}" class="avatar">
+        <h1>Login Here</h1>
+        <form method="POST">{% csrf_token %}
+             {% include 'messages.html' %}
+            <p>Username</p>
+            <input type="text" name="username" placeholder="Enter Username">
+            <p>Password</p>
+            <input type="password" name="Password" placeholder="Enter Password">
+            <input type="submit" name="" value="Login">
+        </form>
+            <span>Don't have an account? <br><a href="{% url 'accurl:signup' %}">Sign Up</a></span>
+        
+    </div>
+
+</body>
+</head>
+</html>
